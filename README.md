@@ -46,7 +46,7 @@ $ yarn run ios
 For Android, use:
 
 ```
-$ yarn run ios
+$ yarn run android
 ```
 
 ## Contributing
