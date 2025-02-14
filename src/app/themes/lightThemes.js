@@ -1,4 +1,5 @@
 import { DefaultTheme } from 'react-native-paper';
+import { DefaultTheme as NavigationLightTheme } from '@react-navigation/native';
 
 const colors = {
   white1: '#ffffff',
@@ -31,7 +32,8 @@ export const paperLightTheme = {
 };
 
 export const navigationLightTheme = {
-  dark: true,
+  dark: false,
+  ...NavigationLightTheme,
   colors: {
     primary: colors.green,
     background: colors.white1,

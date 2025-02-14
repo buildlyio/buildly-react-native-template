@@ -1,4 +1,5 @@
 import { DarkTheme } from 'react-native-paper';
+import { DarkTheme as NavigationDarkTheme } from '@react-navigation/native';
 
 const colors = {
   black1: '#141519',
@@ -32,6 +33,7 @@ export const paperDarkTheme = {
 
 export const navigationDarkTheme = {
   dark: true,
+  ...NavigationDarkTheme,
   colors: {
     primary: colors.green,
     background: colors.black1,
