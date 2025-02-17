@@ -1421,10 +1421,10 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
-"@react-native-async-storage/async-storage@^1.15.14":
-  version "1.24.0"
-  resolved "https://registry.yarnpkg.com/@react-native-async-storage/async-storage/-/async-storage-1.24.0.tgz#888efbc62a26f7d9464b32f4d3027b7f2771999b"
-  integrity sha512-W4/vbwUOYOjco0x3toB8QCr7EjIP6nE9G7o8PMguvvjYT5Awg09lyV4enACRx4s++PPulBiBSjL0KTFx2u0Z/g==
+"@react-native-async-storage/async-storage@^2.1.1":
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/@react-native-async-storage/async-storage/-/async-storage-2.1.1.tgz#7f4642e848e5a257ff4e65d2c93e80f0c372dd7c"
+  integrity sha512-UqlnxddwM3rlCHvteFz+HpIXjqhQM7GkBgVQ9sMvMdl8QVOJQDjG7BODCUvabysMDw+9QfMFlLiOI8U6c0VzzQ==
   dependencies:
     merge-options "^3.0.4"
 
@@ -1585,10 +1585,10 @@
   resolved "https://registry.yarnpkg.com/@react-native-community/masked-view/-/masked-view-0.1.11.tgz#2f4c6e10bee0786abff4604e39a37ded6f3980ce"
   integrity sha512-rQfMIGSR/1r/SyN87+VD8xHHzDYeHaJq6elOSCAD+0iLagXkSI2pfA0LmSXP21uw5i3em7GkkRjfJ8wpqWXZNw==
 
-"@react-native-community/netinfo@^7.1.7":
-  version "7.1.12"
-  resolved "https://registry.yarnpkg.com/@react-native-community/netinfo/-/netinfo-7.1.12.tgz#3f314e1184cbc40054621a7c51ed84095b8aa245"
-  integrity sha512-fkCRkOgzfdD0sr8JTasDgm716l8bJPkCNjXIyllG8K+UyixVa68lroQmgW9pewE5G5p43I9MWPtGZR/kVowBzg==
+"@react-native-community/netinfo@^11.4.1":
+  version "11.4.1"
+  resolved "https://registry.yarnpkg.com/@react-native-community/netinfo/-/netinfo-11.4.1.tgz#a3c247aceab35f75dd0aa4bfa85d2be5a4508688"
+  integrity sha512-B0BYAkghz3Q2V09BF88RA601XursIEA111tnc2JOaN7axJWmNefmfjZqw/KdSxKZp7CZUuPpjBmz/WCR9uaHYg==
 
 "@react-native/assets-registry@0.77.0":
   version "0.77.0"
@@ -1799,11 +1799,6 @@
     react-native-drawer-layout "^4.1.1"
     use-latest-callback "^0.2.1"
 
-"@react-navigation/elements@^1.3.31":
-  version "1.3.31"
-  resolved "https://registry.yarnpkg.com/@react-navigation/elements/-/elements-1.3.31.tgz#28dd802a0787bb03fc0e5be296daf1804dbebbcf"
-  integrity sha512-bUzP4Awlljx5RKEExw8WYtif8EuQni2glDaieYROKTnaxsu9kEIA515sXQgUDZU4Ob12VoL7+z70uO3qrlfXcQ==
-
 "@react-navigation/elements@^2.2.5":
   version "2.2.5"
   resolved "https://registry.yarnpkg.com/@react-navigation/elements/-/elements-2.2.5.tgz#0e2ca76e2003e96b417a3d7c2829bf1afd69193f"
@@ -1829,14 +1824,13 @@
   dependencies:
     nanoid "3.3.8"
 
-"@react-navigation/stack@^6.0.11":
-  version "6.4.1"
-  resolved "https://registry.yarnpkg.com/@react-navigation/stack/-/stack-6.4.1.tgz#a158350637f5298292202ce854e5c5c9688f23f9"
-  integrity sha512-upMEHOKMtuMu4c9gmoPlO/JqI6mDlSqwXg1aXKOTQLXAF8H5koOLRfrmi7AkdiE9A7lDXWUAZoGuD9O88cYvDQ==
+"@react-navigation/stack@^7.1.1":
+  version "7.1.1"
+  resolved "https://registry.yarnpkg.com/@react-navigation/stack/-/stack-7.1.1.tgz#0ae8902c5d72573a3c178b3fd19a65cc1971ad16"
+  integrity sha512-CBTKQlIkELp05zRiTAv5Pa7OMuCpKyBXcdB3PGMN2Mm55/5MkDsA1IaZorp/6TsVCdllITD6aTbGX/HA/88A6w==
   dependencies:
-    "@react-navigation/elements" "^1.3.31"
+    "@react-navigation/elements" "^2.2.5"
     color "^4.2.3"
-    warn-once "^0.1.0"
 
 "@sideway/address@^4.1.5":
   version "4.1.5"
@@ -5984,15 +5978,15 @@ react-is@^17.0.1:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-17.0.2.tgz#e691d4a8e9c789365655539ab372762b0efb54f0"
   integrity sha512-w2GsyukL62IJnlaff/nRegPQR94C/XXamvMWmSHRJ4y7Ts/4ocGRmTHvOs8PSE6pB3dWOrD/nueuU5sduBsQ4w==
 
-react-native-config@^1.4.5:
+react-native-config@^1.5.5:
   version "1.5.5"
   resolved "https://registry.yarnpkg.com/react-native-config/-/react-native-config-1.5.5.tgz#5977db58ff20b6fe9dd6fb28c815a9ba43d018d2"
   integrity sha512-dGdLnBU0cd5xL5bF0ROTmHYbsstZnQKOEPfglvZi1vStvAjpld14X25K6mY3KGPTMWAzx6TbjKeq5dR+ILuMMA==
 
-react-native-device-info@^8.4.8:
-  version "8.7.1"
-  resolved "https://registry.yarnpkg.com/react-native-device-info/-/react-native-device-info-8.7.1.tgz#fbb06f87dbbc4423abe713874699fb2e6e99fd15"
-  integrity sha512-cVMZztFa2Qn6qpQa601W61CtUwZQ1KXfqCOeltejAWEXmgIWivC692WGSdtGudj4upSi1UgMSaGcvKjfcpdGjg==
+react-native-device-info@^14.0.4:
+  version "14.0.4"
+  resolved "https://registry.yarnpkg.com/react-native-device-info/-/react-native-device-info-14.0.4.tgz#56b24ace9ff29a66bdfc667209086421ed6cfdce"
+  integrity sha512-NX0wMAknSDBeFnEnSFQ8kkAcQrFHrG4Cl0mVjoD+0++iaKrOupiGpBXqs8xR0SeJyPC5zpdPl4h/SaBGly6UxA==
 
 react-native-drawer-layout@^4.1.1:
   version "4.1.1"
@@ -6015,10 +6009,10 @@ react-native-iphone-x-helper@^1.3.1:
   resolved "https://registry.yarnpkg.com/react-native-iphone-x-helper/-/react-native-iphone-x-helper-1.3.1.tgz#20c603e9a0e765fd6f97396638bdeb0e5a60b010"
   integrity sha512-HOf0jzRnq2/aFUcdCJ9w9JGzN3gdEg0zFE4FyYlp4jtidqU03D5X7ZegGKfT1EWteR0gPBGp9ye5T5FvSWi9Yg==
 
-react-native-localize@^2.1.7:
-  version "2.2.6"
-  resolved "https://registry.yarnpkg.com/react-native-localize/-/react-native-localize-2.2.6.tgz#484f8c700bc629f230066e819265f80f6dd3ef58"
-  integrity sha512-EZETlC1ZlW/4g6xfsNCwAkAw5BDL2A6zk/08JjFR/GRGxYuKRD7iP1hHn1+h6DEu+xROjPpoNeXfMER2vkTVIQ==
+react-native-localize@^3.4.1:
+  version "3.4.1"
+  resolved "https://registry.yarnpkg.com/react-native-localize/-/react-native-localize-3.4.1.tgz#df07c13231b4e8cc949e68513b124105f861229c"
+  integrity sha512-NJqJGBUpHtD/MpLCCkrNiqNZ+xFwbHCivxaoN1Oeb8tBAiZr/IqgP3E+MgnqmmdTMOJ33llUfiW3EM6pEIb33w==
 
 react-native-paper@^4.11.1:
   version "4.12.8"
@@ -6063,7 +6057,7 @@ react-native-safe-area-view@^1.1.1:
   dependencies:
     hoist-non-react-statics "^2.3.1"
 
-react-native-screens@4.6.0:
+react-native-screens@^4.6.0:
   version "4.6.0"
   resolved "https://registry.yarnpkg.com/react-native-screens/-/react-native-screens-4.6.0.tgz#2b60ab6f4cd5010c6f9cb01b034f2aa0e17ccf4b"
   integrity sha512-PqGtR/moJLiTMSavhfo5spKXNHZrlxffq3g5UUVPmyuu7MmazFlPvYqiAYnR2iB9tkJYgvZO6sbjYAE7619M0A==
