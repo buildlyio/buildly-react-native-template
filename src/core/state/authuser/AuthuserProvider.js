@@ -1,9 +1,10 @@
-import React, { useMemo, useReducer, useContext } from 'react';
+import React, { useMemo, useReducer, useContext, useEffect } from 'react';
 import authuserActions from './authuserActions';
 import reducer, { initialState } from './authuserReducer';
 import { Config } from 'react-native-config';
 import oauthService from '../../services/oauthService';
 import httpService from '../../services/httpService';
+import { useLoginMutation } from '../../react-query/mutations/authUser/loginMutation';
 
 /**
  * Context for the authuser state
@@ -12,7 +13,13 @@ const AuthuserContext = React.createContext(initialState);
 
 function AuthuserProvider({ children }) {
   const [authState, dispatch] = useReducer(reducer, initialState || {});
-
+  const {
+    mutate: loginMutation,
+    isLoading: islogin,
+    isError: isLoginError,
+  } = useLoginMutation(res => {
+    console.log('RESPONSE ==>', res);
+  });
   /**
    * Attempts to log the user into the application
    * @param {object} payload the form data

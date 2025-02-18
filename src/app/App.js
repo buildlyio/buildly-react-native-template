@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { StatusBar } from 'react-native';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
 import { Provider as PaperProvider } from 'react-native-paper';
 import { paperDarkTheme, navigationDarkTheme } from './themes/darkThemes';
@@ -14,6 +15,10 @@ import oauthService from '../core/services/oauthService';
 import PreferencesProvider, {
   usePreferences,
 } from './state/preferences/PreferencesProvider';
+
+const queryClient = new QueryClient({
+  defaultOptions: { queries: { retry: 2 } },
+});
 
 const AppContent = () => {
   const { authState } = useAuthuser();
@@ -37,11 +42,13 @@ const AppContent = () => {
 
 const App = () => {
   return (
-    <PreferencesProvider>
-      <AuthuserProvider>
-        <AppContent />
-      </AuthuserProvider>
-    </PreferencesProvider>
+    <QueryClientProvider client={queryClient}>
+      <PreferencesProvider>
+        <AuthuserProvider>
+          <AppContent />
+        </AuthuserProvider>
+      </PreferencesProvider>
+    </QueryClientProvider>
   );
 };
 
