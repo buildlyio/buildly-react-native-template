@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
-		20C9BEC32D63527600E8E152 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C9BEC22D63527600E8E152 /* AppDelegate.swift */; };
+		20C9BEC92D64646C00E8E152 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C9BEC82D64646C00E8E152 /* AppDelegate.swift */; };
 		365AA34948ECEDB22DC51925 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 2E5324F2E5F29E1E6835A3FE /* PrivacyInfo.xcprivacy */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		B488A60CA4847AB193069E22 /* libPods-BuildlyReactNativeTemplate.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D6BB4750B443608ACC4D743B /* libPods-BuildlyReactNativeTemplate.a */; };
@@ -32,7 +32,7 @@
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = BuildlyReactNativeTemplate/Info.plist; sourceTree = "<group>"; };
 		1526F6D3C09B40DA867F6779 /* Zocial.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Zocial.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; };
 		162CF5AE388C402287E00495 /* Foundation.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Foundation.ttf; path = ../src/assets/fonts/Foundation.ttf; sourceTree = "<group>"; };
-		20C9BEC22D63527600E8E152 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		20C9BEC82D64646C00E8E152 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = BuildlyReactNativeTemplate/AppDelegate.swift; sourceTree = "<group>"; };
 		23598C0C3A644568BD6525F2 /* Feather.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Feather.ttf; path = ../src/assets/fonts/Feather.ttf; sourceTree = "<group>"; };
 		25C4BEB8A898474FA131B005 /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialCommunityIcons.ttf; path = ../src/assets/fonts/MaterialCommunityIcons.ttf; sourceTree = "<group>"; };
 		28F1D7CB520348C88D0C596F /* FontAwesome5_Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Regular.ttf; path = ../src/assets/fonts/FontAwesome5_Regular.ttf; sourceTree = "<group>"; };
@@ -97,7 +97,7 @@
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				2E5324F2E5F29E1E6835A3FE /* PrivacyInfo.xcprivacy */,
-				20C9BEC22D63527600E8E152 /* AppDelegate.swift */,
+				20C9BEC82D64646C00E8E152 /* AppDelegate.swift */,
 			);
 			name = BuildlyReactNativeTemplate;
 			sourceTree = "<group>";
@@ -394,7 +394,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				20C9BEC32D63527600E8E152 /* AppDelegate.swift in Sources */,
+				20C9BEC92D64646C00E8E152 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
