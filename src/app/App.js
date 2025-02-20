@@ -15,12 +15,15 @@ import oauthService from '../core/services/oauthService';
 import PreferencesProvider, {
   usePreferences,
 } from './state/preferences/PreferencesProvider';
+import { useOnlineManager } from '../core/hooks/useOnlineManager';
 
 const queryClient = new QueryClient({
   defaultOptions: { queries: { retry: 2 } },
 });
 
 const AppContent = () => {
+  useOnlineManager();
+
   const { authState } = useAuthuser();
   const { darkMode } = usePreferences();
   const [validToken, setValidToken] = useState();
