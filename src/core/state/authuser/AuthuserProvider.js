@@ -1,9 +1,10 @@
-import React, { useMemo, useReducer, useContext } from 'react';
+import React, { useMemo, useReducer, useContext, useEffect } from 'react';
 import authuserActions from './authuserActions';
 import reducer, { initialState } from './authuserReducer';
 import { Config } from 'react-native-config';
 import oauthService from '../../services/oauthService';
-import httpService from '../../services/httpService';
+import { useLoginMutation } from '../../react-query/mutations/authUser/loginMutation';
+import { useRegisterMutation } from '../../react-query/mutations/authUser/registerMutation';
 
 /**
  * Context for the authuser state
@@ -13,6 +14,20 @@ const AuthuserContext = React.createContext(initialState);
 function AuthuserProvider({ children }) {
   const [authState, dispatch] = useReducer(reducer, initialState || {});
 
+  const {
+    mutate: loginMutation,
+    isLoading: isLoggingIn,
+    isError: isLoginError,
+  } = useLoginMutation(res => {
+    console.log('RESPONSE ==>', res);
+  });
+
+  const {
+    mutate: registerMutation,
+    isLoading: isRegisteringIn,
+    isError: isRegisterError,
+  } = useRegisterMutation({}, '', () => {});
+
   /**
    * Attempts to log the user into the application
    * @param {object} payload the form data
@@ -20,36 +35,7 @@ function AuthuserProvider({ children }) {
    * @param {string} payload.password the password for the account
    */
   const login = payload => {
-    dispatch(authuserActions.login(payload));
-
-    oauthService
-      .authenticateWithPasswordFlow(payload)
-      .then(token => {
-        oauthService.setAccessToken(token.data);
-
-        const oauthuser = httpService.makeRequest(
-          'get',
-          `${Config.API_URL}coreuser/me/`,
-        );
-        return oauthuser;
-      })
-      .then(oauthuser => {
-        oauthService.setOauthUser(oauthuser, oauthuser);
-
-        const coreuser = httpService.makeRequest(
-          'get',
-          `${Config.API_URL}coreuser/`,
-        );
-        return { oauthuser, coreuser };
-      })
-      .then(({ oauthuser, coreuser }) => {
-        oauthService.setCurrentCoreUser(oauthuser, coreuser);
-
-        dispatch(authuserActions.loginSuccess(oauthuser));
-      })
-      .catch(error => {
-        dispatch(authuserActions.loginFail(error));
-      });
+    loginMutation(payload);
   };
 
   /**
@@ -72,11 +58,7 @@ function AuthuserProvider({ children }) {
    * @param {string} payload.organization_name the name of the user's organization
    */
   const register = payload => {
-    dispatch(authuserActions.register(payload));
-    httpService
-      .makeRequest('post', `${Config.API_URL}coreuser/`, payload)
-      .then(user => dispatch(authuserActions.registerSuccess(user)))
-      .catch(error => dispatch(authuserActions.registerFail(error)));
+    registerMutation(payload);
   };
 
   const value = useMemo(() => {
