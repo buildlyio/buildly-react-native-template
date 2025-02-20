@@ -1,23 +1,21 @@
 import { useMutation } from '@tanstack/react-query';
 import httpService from '../../../services/httpService';
 
-export const useRegisterMutation = (history, redirectTo, displayAlert) =>
-  useMutation(
-    async registerData => {
+export const useRegisterMutation = (navigation, navigateTo, displayAlert) =>
+  useMutation({
+    mutationFn: async registerData => {
       const response = await httpService.makeRequest(
         'post',
-        `${window.env.API_URL}coreuser/`,
+        `${Config.API_URL}coreuser/`,
         registerData,
       );
       return response;
     },
-    {
-      onSuccess: async () => {
-        displayAlert('success', 'Registration was successful');
-        history.push(redirectTo);
-      },
-      onError: () => {
-        displayAlert('error', 'Registration failed');
-      },
+    onSuccess: async () => {
+      displayAlert('success', 'Registration was successful');
+      navigation.navigate(navigateTo);
     },
-  );
+    onError: () => {
+      displayAlert('error', 'Registration failed');
+    },
+  });

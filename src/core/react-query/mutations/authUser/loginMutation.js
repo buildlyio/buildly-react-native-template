@@ -7,31 +7,27 @@ export const useLoginMutation = displayAlert => {
   return useMutation({
     mutationFn: async loginData => {
       const token = await oauthService.authenticateWithPasswordFlow(loginData);
-      console.log('token', token);
-
       oauthService.setAccessToken(token.data);
 
-      const user = await httpService.makeRequest(
+      const oauthuser = httpService.makeRequest(
         'get',
-        `${Config.OAUTH_TOKEN_URL}coreuser/me/`,
+        `${Config.API_URL}coreuser/me/`,
       );
-      oauthService.setOauthUser(user, { loginData });
 
-      const coreuser = await httpService.makeRequest(
+      oauthService.setOauthUser(oauthuser, oauthuser);
+
+      const coreuser = httpService.makeRequest(
         'get',
-        `${Config.OAUTH_TOKEN_URL}coreuser/`,
+        `${Config.API_URL}coreuser/`,
       );
-      oauthService.setCurrentCoreUser(coreuser, user);
 
-      return user;
+      oauthService.setCurrentCoreUser(oauthuser, coreuser);
     },
     onSuccess: data => {
       oauthService.setAccessToken(token.data);
       displayAlert('success', 'Sign in successful');
     },
     onError: err => {
-      console.log('ERROR =>', err);
-
       displayAlert('error', 'Sign in failed');
     },
   });
