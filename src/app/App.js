@@ -16,6 +16,7 @@ import PreferencesProvider, {
   usePreferences,
 } from './state/preferences/PreferencesProvider';
 import { useOnlineManager } from '../core/hooks/useOnlineManager';
+import CustomSnackbar from './components/CustomSnackbar';
 
 const queryClient = new QueryClient({
   defaultOptions: { queries: { retry: 2 } },
@@ -39,6 +40,7 @@ const AppContent = () => {
         theme={darkMode ? navigationDarkTheme : navigationLightTheme}>
         {validToken ? <AppStack /> : <AppStack />}
       </NavigationContainer>
+      <CustomSnackbar />
     </PaperProvider>
   );
 };
