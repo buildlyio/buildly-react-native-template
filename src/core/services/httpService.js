@@ -1,4 +1,4 @@
-import { http } from 'midgard-core';
+import axios from 'axios';
 import oauthService from './oauthService';
 
 /**
@@ -11,28 +11,37 @@ import oauthService from './oauthService';
  * @param {string} responseType the expected response type from the server
  * @returns request response or error
  */
-function makeRequest(method, url, body, useJwt, contentType, responseType) {
+async function makeRequest(
+  method,
+  url,
+  body,
+  useJwt,
+  contentType,
+  responseType,
+) {
   let token;
   let tokenType;
   if (useJwt) {
     tokenType = 'JWT';
-    token = oauthService.getJwtToken();
+    token = await oauthService.getJwtToken();
   } else {
     tokenType = 'Bearer';
-    token = oauthService.getAccessToken();
+    // TODO: use access token once backend data binding is resolved
+    // token = await oauthService.getAccessToken();
+    token = await oauthService.getJwtToken();
   }
   const headers = {
-    Authorization: `${tokenType} ${token}`,
+    ...(token && { Authorization: `${tokenType} ${token}` }),
     'Content-Type': contentType || 'application/json',
   };
   const options = {
+    url,
     method,
     data: body,
     headers,
-    returnPromise: true,
     responseType: responseType || null,
   };
-  return http.request(url, options);
+  return axios(options);
 }
 
 /**

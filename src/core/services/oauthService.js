@@ -1,4 +1,4 @@
-import { http } from 'midgard-core';
+import axios from 'axios';
 import { Config } from 'react-native-config';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
@@ -43,14 +43,14 @@ async function getOauthUser() {
 function authenticateWithPasswordFlow(credentials) {
   const options = {
     method: 'POST',
+    url: Config.OAUTH_TOKEN_URL,
     data: {
       ...credentials,
       grant_type: 'password',
       client_id: Config.OAUTH_CLIENT_ID,
     },
-    returnPromise: true,
   };
-  return http.request(Config.OAUTH_TOKEN_URL, options);
+  return axios(options);
 }
 
 /**
@@ -68,12 +68,12 @@ function setOauthUser(oauthUser) {
 
 /**
  * Sets the coreuser in localstorage
- * @param {string} user user data
  * @param {string} coreuser oauth user data
+ * @param {string} user user data
  * @returns {string}
  */
-function setCurrentCoreUser(user, coreuser) {
-  const currentUser = user.data.filter(data => data.id === coreuser.data.id);
+function setCurrentCoreUser(coreuser, user) {
+  const currentUser = coreuser.data.filter(data => data.id === user.data.id);
   AsyncStorage.setItem('currentUser', JSON.stringify(currentUser[0]));
 }
 
