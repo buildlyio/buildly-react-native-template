@@ -1,4 +1,29 @@
 {
-  "name": "BuildlyReactNativeTemplate",
-  "displayName": "Buildly"
+  "expo": {
+    "name": "buildly-react-native-template",
+    "slug": "buildly-react-native-template",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/svg/logo.svg",
+    "userInterfaceStyle": "light",
+    "newArchEnabled": true,
+    "splash": {
+      "image": "./assets/bootsplash/logo.svg",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/bootsplash/logo.svg",
+        "backgroundColor": "#ffffff"
+      },
+      "edgeToEdgeEnabled": true
+    },
+    "web": {
+      "favicon": "./assets/svg/logo.svg"
+    }
+  }
 }

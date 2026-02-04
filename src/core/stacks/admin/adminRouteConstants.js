@@ -1,3 +1,3 @@
 export const adminScreens = {
-  USER_MANAGEMENT: 'UserManagement',
+  USER_MANAGEMENT: "UserManagement",
 };

@@ -1,11 +1,7 @@
-import React from 'react';
-import { createStackNavigator } from '@react-navigation/stack';
+import { createStackNavigator } from "@react-navigation/stack";
 
-import { authScreens } from './authRouteConstants';
-import LoginScreen from './screens/LoginScreen';
-import RegisterScreen from './screens/RegisterScreen';
-import ForgotPasswordScreen from './screens/ForgotPasswordScreen';
-import ResetPasswordScreen from './screens/ResetPasswordScreen';
+import { authScreens } from "./authRouteConstants";
+import LoginScreen from "./screens/LoginScreen";
 
 const Stack = createStackNavigator();
 
@@ -16,17 +12,9 @@ const AuthStack = () => {
       screenOptions={{
         headerShown: false,
         gestureEnabled: false,
-      }}>
+      }}
+    >
       <Stack.Screen name={authScreens.LOGIN} component={LoginScreen} />
-      <Stack.Screen name={authScreens.REGISTER} component={RegisterScreen} />
-      <Stack.Screen
-        name={authScreens.FORGOT_PASSWORD}
-        component={ForgotPasswordScreen}
-      />
-      <Stack.Screen
-        name={authScreens.RESET_PASSWORD}
-        component={ResetPasswordScreen}
-      />
     </Stack.Navigator>
   );
 };

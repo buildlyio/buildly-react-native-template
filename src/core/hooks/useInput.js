@@ -1,6 +1,6 @@
-import { useState } from 'react';
+import { useState } from "react";
 
-export const useInput = (initialValue = '', validators = {}) => {
+export const useInput = (initialValue = "", validators = {}) => {
   const [value, setValue] = useState(initialValue);
 
   return {
@@ -10,10 +10,10 @@ export const useInput = (initialValue = '', validators = {}) => {
     ...(validators.confirm &&
       validators.matchField && { matchField: validators.matchField.value }),
     bind: {
-      onChangeText: e => setValue(e),
+      onChangeText: (e) => setValue(e),
       value,
     },
-    clear: () => setValue(''),
+    clear: () => setValue(""),
     reset: () => setValue(initialValue),
   };
 };

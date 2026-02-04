@@ -1,31 +1,30 @@
-import React, { useState } from 'react';
-import { ScrollView, StyleSheet, View } from 'react-native';
-import { Card, Divider, Title } from 'react-native-paper';
-import UserGroupRow from '../components/UserGroupRow';
-import UserRow from '../components/UserRow';
+import { useState } from "react";
+import { ScrollView, StyleSheet, View } from "react-native";
+import { ActivityIndicator, Card, Divider, Text } from "react-native-paper";
+import { moderateScale } from "react-native-size-matters";
+
+import { useGetCoreuserQuery } from "@core-react-query/queries/authUser/getCoreuserQuery";
+import { useGetCoregroupsQuery } from "@core-react-query/queries/authUser/getCoregroupsQuery";
+import UserGroupRow from "../components/UserGroupRow";
+import UserRow from "../components/UserRow";
 
 const UserManagementScreen = () => {
-  const [users, setUsers] = useState([
-    {
-      username: 'admin',
-      first_name: 'System',
-      last_name: 'Admin',
-      organization_name: 'Buildly',
-      is_active: true,
-      groups: [0, 1, 2],
-    },
-  ]);
+  const { data: coreusersData, isLoading: isCoreusersLoading } =
+    useGetCoreuserQuery();
+  const { data: coregroupsData, isLoading: isCoregroupsLoading } =
+    useGetCoregroupsQuery();
+
   const [groups, setGroups] = useState([
-    { name: 'User', value: 0, permission: ['read'] },
+    { name: "User", value: 0, permission: ["read"] },
     {
-      name: 'Admin',
+      name: "Admin",
       value: 1,
-      permission: ['read', 'update', 'create', 'delete'],
+      permission: ["read", "update", "create", "delete"],
     },
     {
-      name: 'Global admin',
+      name: "Global admin",
       value: 2,
-      permission: ['read', 'update', 'create', 'delete'],
+      permission: ["read", "update", "create", "delete"],
     },
   ]);
 
@@ -49,36 +48,35 @@ const UserManagementScreen = () => {
 
   return (
     <View style={styles.container}>
+      <ActivityIndicator
+        animating={isCoreusersLoading || isCoregroupsLoading}
+      />
       <ScrollView
         contentContainerStyle={styles.scrollContainer}
-        alwaysBounceVertical={false}>
+        alwaysBounceVertical={false}
+      >
         <View style={styles.content}>
           <Card style={styles.card}>
-            <Title style={styles.title}>Users</Title>
+            <Text variant="titleMedium" style={styles.title}>
+              Users
+            </Text>
             <Divider />
-            {users?.map((user, index) => (
-              <View key={user.email}>
-                <UserRow
-                  style={styles.group}
-                  user={user}
-                  onChange={value => setUserGroups(index, value)}
-                />
-
+            {coreusersData?.map((user) => (
+              <View key={user.uuid}>
+                <UserRow style={styles.group} user={user} />
                 <Divider />
               </View>
             ))}
           </Card>
 
           <Card style={styles.card}>
-            <Title style={styles.title}>User groups</Title>
+            <Text variant="titleMedium" style={styles.title}>
+              User groups
+            </Text>
             <Divider />
-            {groups.map((group, index) => (
-              <View key={group.value}>
-                <UserGroupRow
-                  style={styles.group}
-                  group={group}
-                  onChange={value => setGroupPermissions(index, value)}
-                />
+            {coregroupsData?.map((group) => (
+              <View key={group.uuid}>
+                <UserGroupRow style={styles.group} group={group} />
                 <Divider />
               </View>
             ))}
@@ -94,15 +92,15 @@ export default UserManagementScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    flexDirection: 'column',
-    justifyContent: 'center',
-    alignItems: 'stretch',
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "stretch",
   },
   scrollContainer: {
-    justifyContent: 'center',
-    alignSelf: 'flex-start',
-    minHeight: '100%',
-    maxWidth: '100%',
+    justifyContent: "center",
+    alignSelf: "flex-start",
+    minHeight: "100%",
+    maxWidth: "100%",
   },
   content: {
     flex: 1,
@@ -116,6 +114,7 @@ const styles = StyleSheet.create({
   },
   card: {
     marginVertical: 4,
-    minWidth: '100%',
+    minWidth: "100%",
+    marginBottom: moderateScale(16),
   },
 });
