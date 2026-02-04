@@ -1,3 +1,0 @@
-# Stacks
-
-Add stacks here.

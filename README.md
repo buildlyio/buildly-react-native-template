@@ -10,8 +10,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 The web application was tested and built with the following versions:
 
-- node v16.13.0
-- yarn v1.22.17
+- node v23.4.0
 
 ### Installing
 
@@ -21,18 +20,13 @@ Further detail about how to deploy Buildly Core locally, check its [documentatio
 To install the application you need to download and install its dependencies, so you have to navigate to the project folder and run the following command:
 
 ```
-$ yarn install
-```
-
-Next, install the pods for iOS.
-```
-$ cd ios && pod install && cd ..
+$ npm install
 ```
 
 Now, start metro.
 
 ```
-$ yarn run start
+$ npm start
 ```
 
 In a separate window, build the app.
@@ -40,13 +34,13 @@ In a separate window, build the app.
 For iOS, use:
 
 ```
-$ yarn run ios
+$ npm run ios
 ```
 
 For Android, use:
 
 ```
-$ yarn run android
+$ npm run android
 ```
 
 ## Contributing
@@ -59,7 +53,7 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 
 ## Authors
 
-* **Buildly** - *Initial work*
+- **Buildly** - _Initial work_
 
 See also the list of [contributors](https://github.com/buildlyio/buildly-react-template/graphs/contributors) who participated in this project.
 
