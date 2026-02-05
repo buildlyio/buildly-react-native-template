@@ -9,6 +9,8 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 3. **Verify before implementing** - Present the plan to the user and wait for explicit approval before making any changes.
 4. **Explicit permission required** - Only make code changes when the user explicitly asks to proceed with implementation. Do not modify files without clear permission.
 5. **File creation restricted to .claude folder** - All files created by Claude must be placed in the `.claude` folder only, unless the user explicitly specifies a different location.
+6. **Task tracking required** - Always create tasks when executing an approved plan. Update the task status as you work on each item.
+7. **Keep documentation current** - Always go through the codebase and update documentation to reflect the latest changes.
 
 ## Development Commands
 
