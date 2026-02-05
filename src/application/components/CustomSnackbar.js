@@ -4,7 +4,7 @@ import { Snackbar, useTheme, Text } from "react-native-paper";
 import { moderateScale } from "react-native-size-matters";
 import { Ionicons } from "@expo/vector-icons";
 
-import { useSnackbarStore } from "@core-zustand/alert/snackbarStore";
+import { useSnackbarStore } from "@app-zustand/alert/snackbarStore";
 
 const CustomSnackbar = () => {
   const { snackbar, hideSnackbar } = useSnackbarStore();

@@ -1,13 +1,13 @@
 import { useQuery } from "@tanstack/react-query";
-import httpService from "@core-services/httpService";
+import httpService from "@app-services/httpService";
 
-export const useGetCoregroupsQuery = () => {
+export const useGetCoreuserQuery = () => {
   return useQuery({
-    queryKey: ["coregroups"],
+    queryKey: ["coreusers"],
     queryFn: async () => {
       const response = await httpService.makeRequest(
         "get",
-        `${process.env.EXPO_PUBLIC_API_URL}coregroups/`,
+        `${process.env.EXPO_PUBLIC_API_URL}coreuser/`,
       );
       return response.data;
     },

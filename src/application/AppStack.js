@@ -9,8 +9,8 @@ import { appScreens } from "./appRouteConstants";
 import SettingsStack from "./stacks/settings/SettingsStack";
 import { usePreferences } from "./state/preferences/PreferencesProvider";
 import DashboardScreen from "./screens/DashboardScreen";
-import AdminStack from "@core-stacks/admin/AdminStack";
-import useAuthStore from "@core-zustand/useAuthStore";
+import AdminStack from "@app-stacks/admin/AdminStack";
+import useAuthStore from "@app-zustand/useAuthStore";
 
 const Stack = createStackNavigator();
 

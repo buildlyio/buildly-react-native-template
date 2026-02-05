@@ -1,5 +1,5 @@
 import { create } from "zustand";
-import oauthService from "@core-services/oauthService";
+import oauthService from "@app-services/oauthService";
 
 const useAuthStore = create((set) => ({
   user: null,

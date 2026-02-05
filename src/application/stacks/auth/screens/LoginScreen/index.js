@@ -15,10 +15,10 @@ import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { Ionicons } from "@expo/vector-icons";
 
-import { authScreens } from "@core-stacks/auth/authRouteConstants";
-import { useLoginMutation } from "@core-react-query/mutations/authUser/loginMutation";
+import { t } from "@app-localization";
+import { useLoginMutation } from "@app-react-query/mutations/authUser/loginMutation";
+import { authScreens } from "@app-stacks/auth/authRouteConstants";
 import { makeStyles } from "./styles";
-import { t } from "@core-localization";
 
 // Validation schema using Yup
 const schema = yup.object().shape({

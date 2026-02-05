@@ -1,10 +1,10 @@
 import { useMutation } from "@tanstack/react-query";
 
-import httpService from "@core-services/httpService";
-import oauthService from "@core-services/oauthService";
-import useAuthStore from "@core-zustand/useAuthStore";
-import { useSnackbarStore } from "@core-zustand/alert/snackbarStore";
-import { t } from "@core-localization";
+import httpService from "@app-services/httpService";
+import oauthService from "@app-services/oauthService";
+import useAuthStore from "@app-zustand/useAuthStore";
+import { useSnackbarStore } from "@app-zustand/alert/snackbarStore";
+import { t } from "@app-localization";
 
 export const useLoginMutation = () => {
   const { showSnackbar } = useSnackbarStore();

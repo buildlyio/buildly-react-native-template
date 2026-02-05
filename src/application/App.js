@@ -9,13 +9,13 @@ import { NavigationContainer } from "@react-navigation/native";
 import * as SplashScreen from "expo-splash-screen";
 
 import AppStack from "./AppStack";
-import AuthStack from "@core-stacks/auth/AuthStack";
+import AuthStack from "@app-stacks/auth/AuthStack";
 import PreferencesProvider, {
   usePreferences,
 } from "./state/preferences/PreferencesProvider";
-import { useOnlineManager } from "@core-hooks/useOnlineManager";
+import { useOnlineManager } from "@app-hooks/useOnlineManager";
 import CustomSnackbar from "@app-components/CustomSnackbar";
-import useAuthStore from "../core/zustand/useAuthStore";
+import useAuthStore from "@app-zustand/useAuthStore";
 
 const queryClient = new QueryClient({
   defaultOptions: { queries: { retry: 2 } },

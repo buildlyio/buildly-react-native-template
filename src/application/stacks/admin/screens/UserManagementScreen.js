@@ -3,8 +3,8 @@ import { ScrollView, StyleSheet, View } from "react-native";
 import { ActivityIndicator, Card, Divider, Text } from "react-native-paper";
 import { moderateScale } from "react-native-size-matters";
 
-import { useGetCoreuserQuery } from "@core-react-query/queries/authUser/getCoreuserQuery";
-import { useGetCoregroupsQuery } from "@core-react-query/queries/authUser/getCoregroupsQuery";
+import { useGetCoreuserQuery } from "@app-react-query/queries/authUser/getCoreuserQuery";
+import { useGetCoregroupsQuery } from "@app-react-query/queries/authUser/getCoregroupsQuery";
 import UserGroupRow from "../components/UserGroupRow";
 import UserRow from "../components/UserRow";
 
